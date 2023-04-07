@@ -1,0 +1,25 @@
+.container {
+    padding-left: var(--grid-padding);
+    padding-right: var(--grid-padding);
+}
+
+.row {
+    margin-left: calc(var(--grid-padding) * -1);
+    margin-right: calc(var(--grid-padding) * -1);
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: var(--grid-padding);
+      padding-left: var(--grid-padding);
+    }
+}
+
+.hide {
+
+    &-md {
+
+        @media(min-width: $md) {
+            display: none;
+        }
+    }
+}

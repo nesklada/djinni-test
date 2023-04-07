@@ -1,0 +1,1 @@
+export const theme = 'themeIsDark_123dj1j23k';

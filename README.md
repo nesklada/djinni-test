@@ -1,1 +1,1 @@
-# djinni-test
+# html-starter-kit

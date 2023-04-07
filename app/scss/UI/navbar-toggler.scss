@@ -1,0 +1,33 @@
+.navbar-toggler {
+    position: relative;
+    border-color: var(--brand-dark);
+
+    &:before,
+    &:after,
+    span:before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        height: 2px;
+        background: var(--brand-dark);
+    }
+
+    &:active {
+        transition: 0s;
+        background: rgba(#000, 0.2);
+    }
+
+    &:before {
+        top: 8px;
+    }
+
+    span:before {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:after {
+        bottom: 8px;
+    }
+}

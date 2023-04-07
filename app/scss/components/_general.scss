@@ -1,0 +1,29 @@
+body {
+    font: 16px/1.5 var(--font-main);
+    background: var(--brand-white);
+    color: var(--brand-default);
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: underline;
+    transition: 0.25s linear;
+
+    &:hover{
+        text-decoration: none;
+    }
+
+    &.btn {
+        text-decoration: none;
+    }
+}
+
+picture {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 700;
+    line-height: inherit;
+    color: var(--brand-dark);
+}

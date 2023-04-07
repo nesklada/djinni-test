@@ -1,0 +1,30 @@
+﻿//Bootstrap:
+@import "../../node_modules/bootstrap-scss/bootstrap.scss";
+
+
+//variables:
+@import "settings/mixins";
+@import "settings/media-variables";
+@import "settings/css-variables";
+
+//UI:
+@import "UI/icon-svg";
+/* purgecss start ignore */
+@import "UI/btn";
+/* purgecss end ignore */
+@import "UI/dropdown";
+@import "UI/form/form-search";
+@import "UI/theme-switcher";
+@import "UI/navbar-toggler";
+
+//Components:
+@import "components/grid";
+@import "components/general";
+@import "components/wrapper-page";
+@import "components/header-page";
+@import "components/footer-page";
+@import "components/filters";
+@import "components/cards";
+
+/* purgecss start ignore */
+/* purgecss end ignore */

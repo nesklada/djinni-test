@@ -1,0 +1,27 @@
+:root {
+    --grid-padding: 12px;
+
+    --brand-warning: #ed7135;
+    --brand-warning-hover: #eb611c;
+    --brand-secondary: #ebebeb;
+    --brand-default: #666;
+    --brand-dark: #292929;
+    --brand-white: #fff;
+
+    --color-link: #00a3ff;
+    
+    --font-main: 'Commissioner', sans-serif;
+    --font-weight-active: 700;
+
+    --input-bg: #eee;
+    --input-focus-bg: #dedede;
+}
+
+[data-theme="dark"] {
+    --brand-dark: #aaa;
+    --brand-white: #292929;
+    --brand-secondary: #141414;
+    --brand-default: #747474;
+    --input-bg: #111;
+    --input-focus-bg: #212121;
+}
