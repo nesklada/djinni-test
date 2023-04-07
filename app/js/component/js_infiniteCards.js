@@ -41,13 +41,12 @@ function infiniteScroll() {
     observer.observe(obserTarget);
 }
 
-function getCards() {
-    return fetch(`https://picsum.photos/v2/list?page=${state.page}&limit=${state.limit}`)
-    .then(data => data.json());
+function getData() {
+    return fetch(`https://picsum.photos/v2/list?page=${state.page}&limit=${state.limit}`).then(data => data.json());
 }
 
 function setCardsToRow() {
-    return getCards().then(data => {
+    return getData().then(data => {
         if(!data || !data.length) {
             return
         }
@@ -65,7 +64,7 @@ function setCardsToRow() {
 }
 
 function $card(data) {
-    const pText = loremText.slice(0, randomInt(loremText.length / (randomInt(2, 6)), loremText.length));
+    const content = loremText.slice(0, randomInt(loremText.length / (randomInt(2, 6)), loremText.length));
 
     const $card = document.createElement('div');
     const $img = document.createElement('img');
@@ -100,7 +99,7 @@ function $card(data) {
     $img.src = data.download_url;
     
     $title.innerText = data.author;
-    $content.innerText = pText;
+    $content.innerText = content;
 
     $btnSave.innerText = 'Save to collection';
     $btnShare.innerText = 'Share';
