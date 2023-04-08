@@ -38,10 +38,13 @@
 
     &-text {
         @extend .mb-2;
-        -webkit-line-clamp: 2;
-        display: -webkit-box;
-        overflow: hidden;
-        text-overflow: ellipsis;
+
+        &.js_textClamp {    
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+        }
     }
 
     &-body,
