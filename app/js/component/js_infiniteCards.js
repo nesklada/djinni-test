@@ -84,7 +84,7 @@ function $card(data) {
     $content.classList.add('card-text', 'js_textClamp');
     $footer.classList.add('card-footer');
     $btnSave.classList.add('btn', 'btn-warning');
-    $btnShare.classList.add('btn', 'btn-outline-secondary');
+    $btnShare.classList.add('btn','btn-outline', 'btn-outline-secondary');
 
     $card.appendChild($media);
     $media.appendChild($img);
