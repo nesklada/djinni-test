@@ -50,9 +50,8 @@ export default function init(fromIndex = 0) {
         });
     });
 
-    window.removeEventListener('resize', onResize);
-
     //need set debounce func:
+    window.removeEventListener('resize', onResize);
     window.addEventListener('resize', onResize);
 }
 
