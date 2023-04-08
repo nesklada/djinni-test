@@ -3333,6 +3333,8 @@ a.text-dark:hover, a.text-dark:focus { color: #121416 !important; }
 
 .row > .col, .row > [class*="col-"] { padding-right: var(--grid-padding); padding-left: var(--grid-padding); }
 
+.hide { display: none; }
+
 @media (min-width: 768px) { .hide-md { display: none; } }
 
 body { font: 16px/1.5 var(--font-main); background: var(--brand-white); color: var(--brand-default); }
