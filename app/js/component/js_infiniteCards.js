@@ -1,6 +1,6 @@
 import createElement from './config/createElement';
 import randomInt from './config/randomInt';
-import js_textClamp from './js_textClamp';
+import { js_textClamp } from './js_textClamp';
 
 const loremText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, nostrum modi, explicabo quia nemo facere quas velit obcaecati laboriosam, eaque debitis totam sint. Molestias, dignissimos excepturi possimus esse debitis labore.';
 

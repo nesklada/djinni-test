@@ -1,11 +1,20 @@
 import createElement from "./config/createElement";
+import insertAfter from "./config/insertAfter";
+import { debounce } from "lodash-es";
 
 const target = 'js_textClamp';
 const targetToggler = target + 'Toggler';
 const hide = 'hide';
 let windowWidth = window.innerWidth;
 
-export default function init(fromIndex = 0) {
+
+export default function init() {
+    js_textClamp();
+
+    window.addEventListener('resize', debounce(onResize, 150));
+}
+
+export function js_textClamp(fromIndex = 0) {
     const nodes = document.querySelectorAll(`.${target}`);
     
     if(!nodes) {
@@ -49,10 +58,6 @@ export default function init(fromIndex = 0) {
             $toggler.remove()
         });
     });
-
-    //need set debounce func:
-    window.removeEventListener('resize', onResize);
-    window.addEventListener('resize', onResize);
 }
 
 function onResize() {
@@ -62,11 +67,7 @@ function onResize() {
 
     windowWidth = window.innerWidth;
 
-    init();
+    js_textClamp();
 }
 
 const isTextClamped = elm => elm.scrollHeight > elm.clientHeight;
-
-function insertAfter(newNode, existingNode) {
-    existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
-}
