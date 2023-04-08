@@ -8,7 +8,7 @@ export default function(fromIndex = 0) {
         return
     }
 
-    const $targets = Array.prototype.slice.call(nodes, nodes.length - fromIndex);
+    const $targets = Array.prototype.slice.call(nodes, fromIndex ? nodes.length - fromIndex : 0);
 
     $targets.forEach((node) => {
 
