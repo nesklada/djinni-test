@@ -1,43 +1,37 @@
-export default function(fromIndex) {
+import createElement from "./config/createElement";
+
+export default function(fromIndex = 0) {
     const target = 'js_textClamp';
-    let targets = document.querySelectorAll(`.${target}`);
+    const nodes = document.querySelectorAll(`.${target}`);
     
-    if(!targets) {
+    if(!nodes) {
         return
     }
 
-    const togglerLabel = 'Show more...';
-    const togglerClasses = ['btn-reset', 'btn-text'];
+    const $targets = Array.prototype.slice.call(nodes, nodes.length - fromIndex);
 
-    if(fromIndex) {
-        targets = Array.prototype.slice.call(targets, targets.length - fromIndex);
-    }
+    $targets.forEach((node) => {
 
-    targets.forEach((elem) => {
-
-        if(!isTextClamped(elem)) {
+        if(!isTextClamped(node)) {
             return
         }
 
-        const control = toggler(togglerLabel, togglerClasses);
+        const $toggler = createElement({
+            tag: 'button',
+            classList: ['btn-reset', 'btn-text'],
+            text: 'Show more...',
+            attrs: {
+                type: 'button'
+            }
+        });
 
-        insertAfter(control, elem);
+        insertAfter($toggler, node);
 
-        control.addEventListener('click', function(e) {
-            elem.classList.remove(target);
-            control.remove()
+        $toggler.addEventListener('click', function(e) {
+            node.classList.remove(target);
+            $toggler.remove()
         });
     });
-}
-
-const toggler = (label, btnClasses) => {
-    const btn = document.createElement('button');
-
-    btn.classList.add(...btnClasses);
-    btn.textContent = label;
-    btn.setAttribute('type', 'button');
-
-    return btn;
 }
 
 const isTextClamped = elm => elm.scrollHeight > elm.clientHeight;
