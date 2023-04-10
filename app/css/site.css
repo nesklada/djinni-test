@@ -3407,13 +3407,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-weight: 700; line-he
 
 .card-media-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
 
-.card-text.js_textClamp { -webkit-line-clamp: 2; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; }
+.card-text.js_textClamp { -webkit-line-clamp: 2; }
 
 .card-body, .card-footer { border-color: var(--brand-secondary); }
 
 .card-body { padding: 16px 23px 20px; }
 
 .card-footer { padding: 16px; display: flex; flex-wrap: wrap; gap: 16px; background: transparent; }
+
+.js_textClamp { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; }
 
 /* purgecss start ignore */
 /* purgecss end ignore */

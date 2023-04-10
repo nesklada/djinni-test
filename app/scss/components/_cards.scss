@@ -39,11 +39,8 @@
     &-text {
         @extend .mb-2;
 
-        &.js_textClamp {    
+        &.js_textClamp {
             -webkit-line-clamp: 2;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
         }
     }
 

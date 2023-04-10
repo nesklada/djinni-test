@@ -181,14 +181,14 @@ const style_prod = (done) => {
     src(path.app.scss)
         .pipe(sass({ outputStyle: "compact" }).on("error", sass.logError))
         .pipe(
-            autoprefixer(["last 10 versions", "> 1%", "ie 11"], {
+            autoprefixer(["last 10 versions", "> 1%"], {
                 cascade: true,
             })
         )
         .pipe(
             purgecss({
                 content: ["./*.html"],
-                whitelist: ['webp', 'avif', 'jpng', 'show', 'collapsing']
+                whitelist: ['webp', 'avif', 'jpng', 'show', 'hide', 'collapsing']
             })
         )
         .pipe(cleanCSS({ level: { 1: { specialComments: 0 }, 2: {} } }))
