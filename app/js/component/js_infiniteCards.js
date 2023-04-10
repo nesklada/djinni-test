@@ -7,12 +7,12 @@ const loremText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
 const state = {
     page: 1,
     limit: 8,
-    target: document.getElementById('js_infiniteCards')
+    
+    $out: document.getElementById('js_infiniteCards')
 }
 
 export default function() {
-
-    if(!state.target) {
+    if(!state.$out) {
         return
     }
 
@@ -20,7 +20,7 @@ export default function() {
 }
 
 function infiniteScroll() {
-    let obserTarget = state.target.lastChild.previousSibling;
+    let obserTarget = lastChildIn(state.$out);
 
     const observer = new IntersectionObserver((entries) => {
         if(!entries[0].isIntersecting) {
@@ -34,7 +34,10 @@ function infiniteScroll() {
         setCardsToRow().then(function() {
             js_textClamp(state.limit);
 
-            obserTarget = state.target.lastChild.previousSibling;
+            obserTarget = lastChildIn(state.$out);
+
+            if(!obserTarget) return;
+
             observer.observe(obserTarget);
         });
     });
@@ -58,7 +61,7 @@ function setCardsToRow() {
             });
             $col.appendChild($card(card));
             
-            state.target.appendChild($col);
+            state.$out.appendChild($col);
         });
     })
 }
@@ -132,3 +135,5 @@ function $card(data) {
 
     return $card;
 }
+
+const lastChildIn = node => (node ? node.lastChild.previousSibling : null);

@@ -3327,7 +3327,6 @@ a.text-dark:hover, a.text-dark:focus { color: #121416 !important; }
 
 .navbar-icon:after { transform: translateY(7px); }
 
-/* purgecss start ignore */
 .container { padding-left: var(--grid-padding); padding-right: var(--grid-padding); }
 
 .row { margin-left: calc(var(--grid-padding) * -1); margin-right: calc(var(--grid-padding) * -1); }
@@ -3338,7 +3337,6 @@ a.text-dark:hover, a.text-dark:focus { color: #121416 !important; }
 
 @media (min-width: 768px) { .hide-md { display: none; } }
 
-/* purgecss end ignore */
 body { font: 16px/1.5 var(--font-main); background: var(--brand-white); color: var(--brand-default); }
 
 a { color: var(--color-link); text-decoration: underline; transition: 0.25s linear; }
