@@ -24,15 +24,15 @@ export function js_textClamp(fromIndex = 0) {
     const $targets = Array.prototype.slice.call(nodes, fromIndex ? nodes.length - fromIndex : 0);
 
     $targets.forEach((node) => {
-        const togglerInited = node.parentNode.querySelector('.' + targetToggler);
+        const existToggler = node.parentNode.querySelector('.' + targetToggler);
         const isOverflow = isTextClamped(node);
 
-        if(togglerInited) {
+        if(existToggler) {
             
             if(isOverflow) {
-                togglerInited.classList.remove(hide);
+                existToggler.classList.remove(hide);
             } else {
-                togglerInited.classList.add(hide);
+                existToggler.classList.add(hide);
             }
 
             return
