@@ -5,8 +5,9 @@
 .theme-switch__label {
 	position: fixed;
     bottom: 15px;
-    right: 0;
+    right: 15px;
 	z-index: 1;
+	margin: 0;
     user-select: none;
 }
 
@@ -16,48 +17,47 @@
 	&:hover,
 	&:focus {
 		+ .theme-switch__label {
-			background-color: lightSlateGray;
+			background-color: #778899;
 		}
 		
 		+ .theme-switch__label span::after {
-			background-color: lighten(lightBlue, 10%);
+			background-color: lighten(#add8e6, 10%);
 		}
 	}
 }
 
 .theme-switch__label {
-	padding: 20px;
-	margin: 0 50px;
-	transition: 
-    background-color 200ms ease-in-out;
-	width: 70px;
+	transition: background-color 200ms ease-in-out;
+	width: 80px;
 	height: 40px;
 	border-radius: 50px;
 	text-align: center;
-	background-color: slateGray;
+	background-color: #708090;
 	box-shadow: -4px 4px 15px inset rgba(0, 0, 0, 0.4);
     cursor: pointer;
 	
 	&::before,
 	&::after {
-		font-size: 2rem;
+		font-size: 1.3rem;
 		position: absolute;
-		transform: translate3d(0, -50%, 0);
 		top: 50%;
+		transform: translateY(-50%);
+		z-index: 9;
+		line-height: 1;
 	}
 	
 	&::before {
-		content: '\263C';
-		right: 100%;
-		margin-right: 10px;
-		color: orange;
+		content: '\263E';
+		right: 14px;
+		// margin-right: 10px;
+		color: #ffa500;
 	}
 	
 	&::after {
-		content: '\263E';
-		left: 100%;
-		margin-left: 10px;
-		color: lightSlateGray;
+		content: '\263C';
+		left: 10px;
+		// margin-left: 10px;
+		color: #40e0d0;
 	}
 	
 	span {
@@ -75,25 +75,25 @@
 		height: 30px;
 		content: '';
 		border-radius: 50%;
-		background-color: lightBlue;
+		background-color: #add8e6;
 		transition: transform 200ms, background-color 200ms;
-		box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.4);
+		box-shadow: -3px 3px 8px rgba(#000, 0.4);
 	}
 }
 
 // Checked label styles
 .theme-switch__input:checked ~ .theme-switch__label {
-		background-color: lightSlateGray;
+	background-color: #778899;
 	
 	&::before {
-		color: lightSlateGray;
+		color: #40e0d0;
 	}
 	
 	&::after {
-		color: turquoise;
+		color: #ffa500;
 	}
 	
 	span::after {
-		transform: translate3d(30px, 0, 0);
+		transform: translate3d(40px, 0, 0);
 	}
 }
