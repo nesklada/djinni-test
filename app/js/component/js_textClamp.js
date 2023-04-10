@@ -9,9 +9,9 @@ let windowWidth = window.innerWidth;
 
 
 export default function init() {
-    js_textClamp();
+    setTimeout(js_textClamp, 300);
 
-    window.addEventListener('resize', debounce(onResize, 150));
+    window.addEventListener('resize', debounce(onResize, 200));
 }
 
 export function js_textClamp(fromIndex = 0) {
