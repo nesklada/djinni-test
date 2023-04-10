@@ -75,7 +75,8 @@ function $card(data) {
         classList: 'card-media-item',
         attrs: {
             loading: 'lazy',
-            src: data.download_url
+            src: data.download_url,
+            alt: data.author
         }
     });
 

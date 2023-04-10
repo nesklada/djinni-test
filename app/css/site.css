@@ -3279,7 +3279,7 @@ a.text-dark:hover, a.text-dark:focus { color: #121416 !important; }
 
 .formsearch-input:focus { background: var(--input-focus-bg); }
 
-.formsearch-submit { position: absolute; top: 0; left: 0; width: 42px; height: 100%; display: flex; align-items: center; justify-content: center; border: 0; background: transparent; box-shadow: none; }
+.formsearch-submit { position: absolute; top: 0; left: 0; width: 48px; height: 100%; padding-left: 12px; display: flex; align-items: center; border: 0; background: transparent; box-shadow: none; }
 
 @media (hover: hover) and (pointer: fine) { .formsearch-submit:hover { background: rgba(0, 0, 0, 0.05); } }
 
