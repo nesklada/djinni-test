@@ -40,16 +40,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./app/js/component/config/localStorageAnchors.js":
-/*!********************************************************!*\
-  !*** ./app/js/component/config/localStorageAnchors.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"theme\": () => (/* binding */ theme)\n/* harmony export */ });\nvar theme = 'themeIsDark_123dj1j23k';\n\n//# sourceURL=webpack://myproject/./app/js/component/config/localStorageAnchors.js?");
-
-/***/ }),
-
 /***/ "./app/js/component/config/randomInt.js":
 /*!**********************************************!*\
   !*** ./app/js/component/config/randomInt.js ***!
@@ -86,7 +76,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _config_localStorageAnchors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config/localStorageAnchors */ \"./app/js/component/config/localStorageAnchors.js\");\n\n/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {\n  var toggler = document.getElementById('js_themeSwitcher');\n  var localStorageTheme = localStorage.getItem(_config_localStorageAnchors__WEBPACK_IMPORTED_MODULE_0__.theme);\n  var isDark = localStorageTheme && +localStorageTheme === 1;\n\n  if (isDark) {\n    toggler.checked = true;\n    onChange(toggler);\n  }\n\n  toggler.addEventListener('change', onChange);\n\n  function onChange(e) {\n    var isDark = e.checked || e.target.checked;\n    document.body.setAttribute('data-theme', isDark ? 'dark' : '');\n    localStorage.setItem(_config_localStorageAnchors__WEBPACK_IMPORTED_MODULE_0__.theme, isDark ? 1 : 0);\n  }\n}\n\n//# sourceURL=webpack://myproject/./app/js/component/js_themeSwitcher.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar $toggler = document.getElementById('js_themeSwitcher');\n/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {\n  var systemDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');\n  systemThemeChange(systemDarkTheme.matches);\n  systemDarkTheme.addEventListener('change', function (e) {\n    systemThemeChange(e.matches);\n  });\n  $toggler.addEventListener('change', onChange);\n}\n\nfunction systemThemeChange(bool) {\n  $toggler.checked = bool || false;\n  onChange($toggler);\n}\n\nfunction onChange(e) {\n  var isDark = (e.target ? e.target.checked : e.checked) || false;\n  document.body.setAttribute('data-theme', isDark ? 'dark' : '');\n}\n\n//# sourceURL=webpack://myproject/./app/js/component/js_themeSwitcher.js?");
 
 /***/ }),
 

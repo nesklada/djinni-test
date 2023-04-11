@@ -4,8 +4,8 @@
 .theme-switch__input,
 .theme-switch__label {
 	position: fixed;
-    bottom: 15px;
-    right: 15px;
+    bottom: 0.9375rem;
+    right: 0.9375rem;
 	z-index: 1;
 	margin: 0;
     user-select: none;
@@ -26,58 +26,60 @@
 	}
 }
 
+.theme-switch__icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1.25rem;
+	height: 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9;
+
+	&.is-light {
+		color: #ffa500;
+		left: 0.625rem;
+	}
+
+	&.is-dark {
+		color: #40e0d0;
+		right: 0.625rem;
+	}
+
+	svg {
+		fill: currentColor;
+	}
+}
+
 .theme-switch__label {
 	transition: background-color 200ms ease-in-out;
-	width: 80px;
-	height: 40px;
-	border-radius: 50px;
+	width: 5rem;
+	height: 2.5rem;
+	border-radius: 4rem;
 	text-align: center;
 	background-color: #708090;
 	box-shadow: -4px 4px 15px inset rgba(0, 0, 0, 0.4);
     cursor: pointer;
-	
-	&::before,
-	&::after {
-		font-size: 1.3rem;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		z-index: 9;
-		line-height: 1;
-	}
-	
-	&::before {
-		content: '\263E';
-		right: 14px;
-		// margin-right: 10px;
-		color: #ffa500;
-	}
-	
-	&::after {
-		content: '\263C';
-		left: 10px;
-		// margin-left: 10px;
-		color: #40e0d0;
-	}
 	
 	span {
 		position: absolute;
 		bottom: calc(100% + 10px);
 		left: 0;
 		width: 100%;
-	}
-	
-	span::after {
-		position: absolute;
-		top: calc(100% + 15px);
-		left: 5px;
-		width: 30px;
-		height: 30px;
-		content: '';
-		border-radius: 50%;
-		background-color: #add8e6;
-		transition: transform 200ms, background-color 200ms;
-		box-shadow: -3px 3px 8px rgba(#000, 0.4);
+
+		&:after {
+			position: absolute;
+			top: calc(100% + 15px);
+			left: 5px;
+			width: 1.875rem;
+			height: 1.875rem;
+			content: '';
+			border-radius: 50%;
+			background-color: #add8e6;
+			transition: transform 200ms, background-color 200ms;
+			box-shadow: -3px 3px 8px rgba(#000, 0.4);
+		}
 	}
 }
 
@@ -85,15 +87,15 @@
 .theme-switch__input:checked ~ .theme-switch__label {
 	background-color: #778899;
 	
-	&::before {
+	.is-light {
 		color: #40e0d0;
 	}
 	
-	&::after {
+	.is-dark {
 		color: #ffa500;
 	}
 	
 	span::after {
-		transform: translate3d(40px, 0, 0);
+		transform: translate3d(2.5rem, 0, 0);
 	}
 }

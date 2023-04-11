@@ -1,14 +1,28 @@
-.cards-holder {
-    padding-top: 40px;
-    padding-bottom: 40px;
+.cards {
+    
+    &-holder {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        @media(min-width: $md) {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+    }
+
+    &-header {
+        margin-bottom: 2rem;
+
+        &-title {
+            margin-bottom: 0.125rem;
+        }
+    }
 }
 
 .card {
     flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
     border-color: var(--brand-secondary);
-    border-radius: 8px;
+    border-radius: 0.5rem;
     background: var(--brand-white);
 
     &:last-child {
@@ -16,13 +30,13 @@
     }
 
     &-title {
-        @extend .mb-1;
+        margin-bottom: 0.1875rem;
     }
 
     &-media {
         position: relative;
-        padding-top: 56.5%;
-        border-radius: 7px;
+        padding-top: 56.215%;
+        border-radius: 0.5rem;
         overflow: hidden;
 
         &:first-child {
@@ -54,14 +68,14 @@
     }
 
     &-body {
-        padding: 16px 23px 20px;
+        padding: 1rem 1.4375rem 1.25rem;
     }
 
     &-footer {
-        padding: 16px;
+        padding: 1rem 0.9375rem;
         display: flex;
         flex-wrap: wrap;
-        gap: 16px;
+        gap: 1rem;
         background: transparent;
     }
 

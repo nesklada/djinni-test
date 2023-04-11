@@ -5,7 +5,7 @@
 <main class="main-page">
     <div class="container cards-holder">
         <div class="row justify-content-lg-between">
-            <div class="col-12 col-lg-3 pl-xl-0">
+            <div class="col-12 col-lg-3 pb-3 pb-lg-0 pt-lg-3 pl-xl-0">
                 <aside class="filters d-flex flex-column">
                     <button class="filters-control is-active" type="button">
                         <svg class="icon-svg mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,17 +26,21 @@
                     <button class="filters-control" type="button">
                         <svg class="icon-svg mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 21L5.00221 21.0665L5.06445 22H6V21ZM18 21V22H18.9356L18.9978 21.0665L18 21ZM3 5H2V7H3V5ZM21 7H22V5H21V7ZM11 11V10H9V11H11ZM9 16V17H11V16H9ZM15 11V10H13V11H15ZM13 16V17H15V16H13ZM4.00221 6.06652L5.00221 21.0665L6.99779 20.9335L5.99779 5.93348L4.00221 6.06652ZM6 22H18V20H6V22ZM18.9978 21.0665L19.9978 6.06652L18.0022 5.93348L17.0022 20.9335L18.9978 21.0665ZM19 5H5V7H19V5ZM3 7H5V5H3V7ZM19 7H21V5H19V7ZM9 11V16H11V11H9ZM13 11V16H15V11H13ZM12 4C13.3965 4 14.5725 4.95512 14.9055 6.24926L16.8424 5.75074C16.2874 3.59442 14.3312 2 12 2V4ZM9.09445 6.24926C9.42754 4.95512 10.6035 4 12 4V2C9.66883 2 7.71258 3.59442 7.15758 5.75074L9.09445 6.24926Z" />
-                        </svg> Selfies
+                        </svg> Deleted
                     </button>
                 </aside>
             </div>
             <div class="col-12 col-lg-9 col-xl-8">
-                <div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+                <div class="d-flex justify-content-between flex-wrap cards-header">
                     <div class="pr-4">
-                        <h1 class="mb-1">All photos</h1>
-                        <b>150 items</b>
+                        <h1 class="cards-header-title">All photos</h1>
+                        <div>
+                            <small>
+                                <b>150 items</b>
+                            </small>
+                        </div>
                     </div>
-                    <div class="pt-3 pt-sm-0">
+                    <div class="pt-3">
                         <div class="btn-group" role="group">
                             <button class="btn btn-outline btn-outline-secondary active" type="button">
                                 Newest
@@ -61,7 +65,7 @@
                         @@include('../components/ui/_card.html', {
                             "img_name": "img-card-2",
                             "title": "Heading",
-                            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae mollitia iure atque voluptate repellendus quibusdam ducimus tenetur asperiores non itaque, sit ex? Soluta ea veritatis a aliquam minus, fugit saepe."
+                            "text": "And here full text doesn’t fit, and at the very end of it we should show a truncatio voluptate repellendus quibusdam ducimus tenetur asperiores non itaque, sit ex? Soluta ea veritatis a aliquam minus, fugit saepe."
                         })
                     </div>
                     

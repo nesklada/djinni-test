@@ -1,23 +1,25 @@
-import { theme } from "./config/localStorageAnchors";
+const $toggler = document.getElementById('js_themeSwitcher');
 
 export default function() {
-    const toggler = document.getElementById('js_themeSwitcher');
-    const localStorageTheme = localStorage.getItem(theme);
-    const isDark = localStorageTheme && +localStorageTheme === 1;
+    const systemDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-    if(isDark) {
-        toggler.checked = true;
+    systemThemeChange(systemDarkTheme.matches);
 
-        onChange(toggler);
-    }
+    systemDarkTheme.addEventListener('change', function(e) {
+        systemThemeChange(e.matches)
+    });
 
-    toggler.addEventListener('change', onChange);
+    $toggler.addEventListener('change', onChange);
+}
 
-    function onChange(e) {
-        const isDark = e.checked || e.target.checked;
+function systemThemeChange(bool) {
+    $toggler.checked = bool || false;
 
-        document.body.setAttribute('data-theme', isDark ? 'dark' : '');
+    onChange($toggler);
+}
 
-        localStorage.setItem(theme, isDark ? 1 : 0);
-    }
+function onChange(e) {
+    const isDark = (e.target ? e.target.checked : e.checked) || false;
+
+    document.body.setAttribute('data-theme', isDark ? 'dark' : '');
 }
