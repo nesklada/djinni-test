@@ -7,7 +7,7 @@ const loremText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
 const state = {
     page: 1,
     limit: 8,
-    
+
     $out: document.getElementById('js_infiniteCards')
 }
 
@@ -70,6 +70,7 @@ function $card(data) {
     const testContent = loremText.slice(0, randomInt(loremText.length / (randomInt(2, 6)), loremText.length));
 
     const $card = createElement({
+        tag: 'figure',
         classList: 'card'
     });
 

@@ -11,6 +11,10 @@
     border-radius: 8px;
     background: var(--brand-white);
 
+    &:last-child {
+        margin-bottom: 0
+    }
+
     &-title {
         @extend .mb-1;
     }
