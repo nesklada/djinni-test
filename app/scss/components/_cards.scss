@@ -41,7 +41,7 @@
     }
 
     &-text {
-        @extend .mb-2;
+        margin-bottom: 0.5rem;
 
         &.js_textClamp {
             -webkit-line-clamp: 2;
@@ -63,5 +63,9 @@
         flex-wrap: wrap;
         gap: 16px;
         background: transparent;
+    }
+
+    :last-child {
+        margin-bottom: 0;
     }
 }
