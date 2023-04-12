@@ -2,8 +2,8 @@
     position: relative;
 
     &-input {
-        padding-left: 44px;
-        min-height: 40px;
+        padding: 0.4375rem 1rem 0.5625rem 2.75rem;
+        min-height: 2.5rem;
         background: var(--input-bg);
 
         &:focus {
@@ -15,12 +15,11 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 48px;
+        width: 3rem;
         height: 100%;
-        padding-left: 12px;
+        padding-left: 0.75rem;
         display: flex;
         align-items: center;
-        // justify-content: center;
         border: 0;
         background: transparent;
         box-shadow: none;

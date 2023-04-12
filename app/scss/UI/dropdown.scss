@@ -2,15 +2,23 @@
     position: relative;
 
     &:after {
+        display: none;
+    }
+
+    &-item {
+        position: relative;
+        display: inline-block;
+        padding-right: 1.5625rem;
+    }
+
+    &-icon {
         position: absolute;
-        top: 50%;
-        right: 0;
+        top: calc(50% + 0.0625rem);
+        right: 1px;
+        transform: translateY(-50%);
         width: 1.5rem;
         height: 1.5rem;
-        background: url(../../img/icon-chevron-down.svg) no-repeat center/contain;
-        border: 0;
-        margin: 0;
         vertical-align: unset;
-        transform: translate(0, -50%);
+        stroke: currentColor;
     }
 }

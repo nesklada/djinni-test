@@ -2,10 +2,14 @@
 
     .btn {
         padding: 0.3125rem 1rem 0.4375rem;
-        min-width: 88px;
+        min-width: 5.5rem;
 
         &.active {
             border: 0;
+        }
+
+        &:not(:first-child) {
+            margin-left: 0;
         }
     }
 }

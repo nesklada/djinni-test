@@ -24,6 +24,7 @@
     border-color: var(--brand-secondary);
     border-radius: 0.5rem;
     background: var(--brand-white);
+    overflow: hidden;
 
     &:last-child {
         margin-bottom: 0
@@ -36,7 +37,6 @@
     &-media {
         position: relative;
         padding-top: 56.215%;
-        border-radius: 0.5rem;
         overflow: hidden;
 
         &:first-child {

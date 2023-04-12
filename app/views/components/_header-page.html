@@ -20,7 +20,9 @@
     <link href="{{var_path_env}}css/site.css" rel="stylesheet" />
 </head>
 
-<body>    
+<body>
+    @@include("./_svg-sprites.html")
+
     <div class="wrapper-page">
         <header class="header-page py-2 p-md-0">
             <div class="container">
@@ -66,7 +68,12 @@
                                             role="button" 
                                             data-toggle="dropdown" 
                                             aria-expanded="false">
-                                            English
+                                            <span class="dropdown-toggle-item">
+                                                English
+                                                <svg class="dropdown-toggle-icon">
+                                                    <use xlink:href="#svg-chevron"></use>
+                                                </svg>
+                                            </span>
                                         </a>
                                         <div class="dropdown-menu">
                                             <button class="dropdown-item" type="button">English</button>
