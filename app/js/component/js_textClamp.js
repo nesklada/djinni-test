@@ -5,21 +5,17 @@ import { debounce } from "lodash-es";
 const target = 'js_textClamp';
 const targetToggler = target + 'Toggler';
 const hide = 'hide';
-let windowWidth = window.innerWidth;
-
 
 export default function init() {
     setTimeout(js_textClamp, 300);
 
-    window.addEventListener('resize', debounce(onResize, 200));
+    window.addEventListener('resize', debounce(onResize(), 200));
 }
 
 export function js_textClamp(fromIndex = 0) {
     const nodes = document.querySelectorAll(`.${target}`);
-    
-    if(!nodes) {
-        return
-    }
+
+    if (!nodes) return;
 
     const $targets = Array.prototype.slice.call(nodes, fromIndex ? nodes.length - fromIndex : 0);
 
@@ -27,20 +23,18 @@ export function js_textClamp(fromIndex = 0) {
         const existToggler = node.parentNode.querySelector('.' + targetToggler);
         const isOverflow = isTextClamped(node);
 
-        if(existToggler) {
-            
-            if(isOverflow) {
+        if (existToggler) {
+
+            if (isOverflow) {
                 existToggler.classList.remove(hide);
             } else {
                 existToggler.classList.add(hide);
             }
 
-            return
+            return;
         }
 
-        if(!isOverflow) {
-            return
-        }
+        if (!isOverflow) return;
 
         const $toggler = createElement({
             tag: 'button',
@@ -53,21 +47,23 @@ export function js_textClamp(fromIndex = 0) {
 
         insertAfter($toggler, node);
 
-        $toggler.addEventListener('click', function(e) {
+        $toggler.addEventListener('click', function (e) {
             node.classList.remove(target);
-            $toggler.remove()
+            $toggler.remove();
         });
     });
 }
 
 function onResize() {
-    if(windowWidth === window.innerWidth) {
-        return
+    let windowWidth = window.innerWidth;
+
+    return function () {
+        if (windowWidth === window.innerWidth) return;
+
+        windowWidth = window.innerWidth;
+
+        js_textClamp();
     }
-
-    windowWidth = window.innerWidth;
-
-    js_textClamp();
 }
 
 const isTextClamped = elm => elm.scrollHeight > elm.clientHeight;

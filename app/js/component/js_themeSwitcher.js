@@ -1,11 +1,11 @@
 const $toggler = document.getElementById('js_themeSwitcher');
 
-export default function() {
+export default function () {
     const systemDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     systemThemeChange(systemDarkTheme.matches);
 
-    systemDarkTheme.addEventListener('change', function(e) {
+    systemDarkTheme.addEventListener('change', function (e) {
         systemThemeChange(e.matches)
     });
 

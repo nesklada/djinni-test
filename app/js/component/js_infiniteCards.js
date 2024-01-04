@@ -11,10 +11,8 @@ const state = {
     $out: document.getElementById('js_infiniteCards')
 }
 
-export default function() {
-    if(!state.$out) {
-        return
-    }
+export default function () {
+    if (!state.$out) return;
 
     infiniteScroll();
 }
@@ -23,20 +21,18 @@ function infiniteScroll() {
     let obserTarget = lastChildIn(state.$out);
 
     const observer = new IntersectionObserver((entries) => {
-        if(!entries[0].isIntersecting) {
-            return false
-        }
+        if (!entries[0].isIntersecting) return false;
 
         observer.unobserve(obserTarget);
 
         state.page++;
 
-        setCardsToRow().then(function() {
+        setCardsToRow().then(function () {
             js_textClamp(state.limit);
 
             obserTarget = lastChildIn(state.$out);
 
-            if(!obserTarget) return;
+            if (!obserTarget) return;
 
             observer.observe(obserTarget);
         });
@@ -51,16 +47,14 @@ function getData() {
 
 function setCardsToRow() {
     return getData().then(data => {
-        if(!data || !data.length) {
-            return
-        }
+        if (!data || !data.length) return;
 
         data.forEach(card => {
             const $col = createElement({
                 classList: ['col-12', 'col-md-6', 'mb-4', 'd-flex', 'flex-column']
             });
             $col.appendChild($card(card));
-            
+
             state.$out.appendChild($col);
         });
     })
@@ -119,7 +113,7 @@ function $card(data) {
 
     const $btnShare = createElement({
         tag: 'button',
-        classList: ['btn','btn-outline', 'btn-outline-secondary'],
+        classList: ['btn', 'btn-outline', 'btn-outline-secondary'],
         attrs: {
             type: 'button'
         },
